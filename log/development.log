@@ -3384,3 +3384,33 @@ Processing by SchoolClassesController#show as HTML
 Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/school_classes/4/edit" for 127.0.0.1 at 2021-09-23 19:47:43 -0500
+Processing by SchoolClassesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSchoolClass Load (0.1ms)[0m  [1m[34mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering school_classes/edit.html.erb within layouts/application
+  Rendered school_classes/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/school_classes/4" for 127.0.0.1 at 2021-09-23 19:47:53 -0500
+Processing by SchoolClassesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oMXGeAg29m8K/cLOrWP+qjGBSg/5fbeXMDwidVdHY+J6iKuTz55I4GjABa2OChl1ie7mLMMB2Chne5D6/OFmIA==", "school_class"=>{"title"=>"Software", "room_number"=>"75"}, "commit"=>"Update School class", "id"=>"4"}
+  [1m[36mSchoolClass Load (0.1ms)[0m  [1m[34mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "school_classes" SET "title" = ?, "room_number" = ?, "updated_at" = ? WHERE "school_classes"."id" = ?[0m  [["title", "Software"], ["room_number", 75], ["updated_at", "2021-09-24 00:47:53.809834"], ["id", 4]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/school_classes.4
+Completed 302 Found in 8ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/school_classes.4" for 127.0.0.1 at 2021-09-23 19:47:53 -0500
+Processing by SchoolClassesController#index as 
+  Rendering school_classes/index.html.erb within layouts/application
+  [1m[36mSchoolClass Load (0.4ms)[0m  [1m[34mSELECT "school_classes".* FROM "school_classes"[0m
+  Rendered school_classes/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.4ms)
+
+
